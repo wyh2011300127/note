@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.yuheng.wang.dao.UserDao">
+	<select id="getById" parameterType="int" resultType="com.yuheng.wang.model.User">
+		select *
+		from cn_user where id = #{id}
+	</select>
+	<insert id="insert" parameterType="com.yuheng.wang.model.User">
+		
+		
+	</insert>
+</mapper>

@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+/**颜色**/
+.red {
+	color: red;
+}
+/**字体**/
+.font14 {
+	font-size: 14px;
+}
+
+/**外边距**/
+.mr10 {
+	margin-right: 10px;
+}
+
+.ml10 {
+	margin-left: 10px;
+}

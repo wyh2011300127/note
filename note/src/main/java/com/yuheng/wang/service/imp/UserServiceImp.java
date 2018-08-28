@@ -20,7 +20,7 @@ public class UserServiceImp implements UserService {
         User user;
         try {
             user = userDao.getById(1);
-            log.info(user.toString());
+            log.info(">>> UserServiceImp getById:" + user.toString());
             return user;
         } catch (Exception e) {
             e.printStackTrace();

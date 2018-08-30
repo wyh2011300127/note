@@ -1,24 +1,34 @@
 package com.yuheng.wang.interceptors;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
 public class HelloInterceptor {
+    private static Logger log = LoggerFactory.getLogger(HelloInterceptor.class);
 
     public void doBefore() {
-        System.out.println("Enter HelloInterceptor doBefore method...");
+        log.info(">>>Enter HelloInterceptor doBefore method...");
     }
 
     public void doAfter() {
-        System.out.println("Enter HelloInterceptor doAfter method...");
+        log.info(">>>Enter HelloInterceptor doAfter method...");
     }
 
-    public void doAround() {
-        System.out.println("Enter HelloInterceptor doAround method...");
+    public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
+        log.info(">>>Enter HelloInterceptor doAround before method...");
+        Object obj = pjp.proceed();
+        log.info("Object:" + obj);
+        log.info(">>>Enter HelloInterceptor doAround after method...");
+        return obj;
     }
 
     public void doReturn() {
-        System.out.println("Enter HelloInterceptor doReturn method...");
+        log.info(">>>Enter HelloInterceptor doReturn method...");
     }
 
     public void doThrowing() {
-        System.out.println("Enter HelloInterceptor doThrowing method...");
+        log.info(">>>Enter HelloInterceptor doThrowing method...");
     }
 }

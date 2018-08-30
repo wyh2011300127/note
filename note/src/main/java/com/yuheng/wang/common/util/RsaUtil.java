@@ -36,8 +36,10 @@ import org.slf4j.LoggerFactory;
 public class RsaUtil {
     private static Logger log = LoggerFactory.getLogger(RsaUtil.class);
     private static String RSAKeyStoreStr = RsaUtil.class.getResource("").getPath();
+    // 启动项目时变更为WEB-INF，执行main方法时改成target
+    private final static String WEB_PATH = "WEB-INF";
     private static String RSAKeyStore
-        = RSAKeyStoreStr.substring(0, RSAKeyStoreStr.indexOf("target")) + "/target/classes/RSAKey.txt";
+        = RSAKeyStoreStr.substring(0, RSAKeyStoreStr.indexOf(WEB_PATH)) + "/" + WEB_PATH + "/classes/RSAKey.txt";
     private static KeyFactory keyFac = null;
     private static RsaUtil rsaUtil = new RsaUtil();
     private static Object lock = new Object();
@@ -52,7 +54,7 @@ public class RsaUtil {
 
     public static void main(String[] args) {
         try {
-            /*// 生成一个加密钥对
+            // 生成一个加密钥对
             KeyPair keyPair = RsaUtil.generateKeyPair();
             PublicKey pubKey = keyPair.getPublic();
             PrivateKey priKey = keyPair.getPrivate();
@@ -66,7 +68,7 @@ public class RsaUtil {
             System.out.println(new String(encrypt));
             // 解密
             byte[] decrypt = decrypt(priKey, encrypt);
-            System.out.println(new String(decrypt));*/
+            System.out.println(new String(decrypt));
 
         } catch (Exception e) {
             e.printStackTrace();

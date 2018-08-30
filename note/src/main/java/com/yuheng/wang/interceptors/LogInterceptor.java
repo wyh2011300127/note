@@ -22,7 +22,7 @@ import com.yuheng.wang.model.User;
 public class LogInterceptor {
     private static Logger log = LoggerFactory.getLogger(LogInterceptor.class);
 
-    @Pointcut("execution(public com.yuheng.wang.model.User com.yuheng.wang.service.imp.UserServiceImp.getById(int))")
+    @Pointcut("execution(* com.yuheng.wang.service.imp.UserServiceImp.*(..))")
     public void myMethod() {
 
     }

@@ -5,6 +5,8 @@
 <head>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/styles/login.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/common/drag.css" />
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script type="text/javascript"
@@ -13,6 +15,13 @@
 	src="${pageContext.request.contextPath}/js/RSA/BigInt.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/RSA/RSA.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/drag.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#drag').drag();
+	});
+</script>
 </head>
 <body>
 	<div class="global">
@@ -37,11 +46,22 @@
 					</div>
 				</dt>
 				<dt>
+					<div class='letter'>
+						验证码:&nbsp;
+						<input type="text" name="" id="yzm" tabindex='3'
+							style="width:130px;" />
+						<img alt="点击刷新" title="点击刷新"
+							style="margin-left:30px;margin-bottom:-8px;"
+							src="${pageContext.request.contextPath}/verifyCode.do"
+							onclick="var s=Math.random();this.src='${pageContext.request.contextPath}/verifyCode.do?1='+s;" />
+					</div>
+				</dt>
+				<dt>
 					<div>
 						<input type="button" name="" id="login" value='&nbsp登&nbsp录&nbsp'
-							tabindex='3' />
-						<input type="button" name="" id="sig_in" value='&nbsp注&nbsp册&nbsp'
 							tabindex='4' />
+						<input type="button" name="" id="sig_in" value='&nbsp注&nbsp册&nbsp'
+							tabindex='5' />
 					</div>
 				</dt>
 			</dl>

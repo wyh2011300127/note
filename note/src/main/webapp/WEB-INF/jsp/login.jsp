@@ -5,8 +5,6 @@
 <head>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/styles/login.css" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/common/drag.css" />
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script type="text/javascript"
@@ -16,11 +14,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/RSA/RSA.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/drag.js"></script>
+	src="${pageContext.request.contextPath}/js/login/login_util.js"></script>
 <script type="text/javascript">
-	$(function() {
-		$('#drag').drag();
-	});
+	
 </script>
 </head>
 <body>
@@ -36,30 +32,34 @@
 				<dt>
 					<div class='letter'>
 						用户名:&nbsp;
-						<input type="text" name="" id="count" tabindex='1' />
+						<input type="text" name="" id="user_name" tabindex='1'
+							style="ime-mode:disabled" />
+						<span id="user_name_error_msg" style="font-size: 15px;color: red;"></span>
 					</div>
 				</dt>
 				<dt>
 					<div class='letter'>
 						密&nbsp;&nbsp;&nbsp;码:&nbsp;
-						<input type="password" name="" id="password" tabindex='2' />
+						<input type="password" name="" id="pwd" tabindex='2' />
+						<span id="pwd_error_msg" style="font-size: 15px;color: red;"></span>
 					</div>
 				</dt>
 				<dt>
 					<div class='letter'>
 						验证码:&nbsp;
 						<input type="text" name="" id="yzm" tabindex='3'
-							style="width:130px;" />
+							style="width:120px;ime-mode:disabled" />
 						<img alt="点击刷新" title="点击刷新"
-							style="margin-left:30px;margin-bottom:-8px;"
+							style="margin-left:10px;margin-right:5px;margin-bottom:-8px;"
 							src="${pageContext.request.contextPath}/verifyCode.do"
 							onclick="var s=Math.random();this.src='${pageContext.request.contextPath}/verifyCode.do?1='+s;" />
+						<span id="yzm_error_msg" style="font-size: 15px;color: red;"></span>
 					</div>
 				</dt>
 				<dt>
 					<div>
-						<input type="button" name="" id="login" value='&nbsp登&nbsp录&nbsp'
-							tabindex='4' />
+						<input type="button" name="" id="login_btn"
+							value='&nbsp登&nbsp录&nbsp' tabindex='4' />
 						<input type="button" name="" id="sig_in" value='&nbsp注&nbsp册&nbsp'
 							tabindex='5' />
 					</div>

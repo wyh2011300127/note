@@ -14,14 +14,10 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/RSA/Barrett.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/RSA/BigInt.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/RSA/RSA.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/RSA/Barrett.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/RSA/BigInt.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/RSA/RSA.js"></script>
 
 <script type="text/javascript">
 	//测试AOP XML开发
